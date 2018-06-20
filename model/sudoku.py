@@ -8,9 +8,9 @@ class Sudoku:
         #attribut
         #self.grille = [[0 for x in range(9)] for y in range(9)]
         grille = []
-        for l in range(1, 9):
+        for l in range(0, 8):
             ligne = []
-            for c in range(1, 9):
+            for c in range(0, 9):
                 ligne.append(Case(0))
             grille.append(l)
 
