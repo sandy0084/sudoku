@@ -7,13 +7,18 @@ class Sudoku:
         self.grille = [][]
         print("Creation d'un sudoku " + self.grille)
 
+        #creation des a, b, c, d, e, f, g, h, i (liste avec les cases correspondantes (schema))
+
     #deserialisation (reception de la grille)
-    def deserialisation(self):
+    def deserialisation(self, sudoku):
+        #notre grille (self) va prendre les valeurs du sudoku recu
+        #self = sudoku
         return
 
 
     # solve (test de la grille)
-    def solve(self):
+    def solve(self, sudoku):
+        #test du sudoku
         return
 
     # serialisation (renvoi de la grille)
