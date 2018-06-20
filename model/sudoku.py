@@ -1,3 +1,5 @@
+from model import Case
+
 #classe sudoku
 class Sudoku:
 
