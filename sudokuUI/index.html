@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sudoku Solver</title>
+		<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+	
+	
+		<table class="global">
+			<tr>
+				<td id="A">
+					<table>
+						<tr>
+							<td class="case" id="00"><input type="text" maxlength="1"></td>
+							<td class="case" id="10"><input type="text" maxlength="1"></td>
+							<td class="case" id="20"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="01"><input type="text" maxlength="1"></td>
+							<td class="case" id="11"><input type="text" maxlength="1"></td>
+							<td class="case" id="21"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="02"><input type="text" maxlength="1"></td>
+							<td class="case" id="12"><input type="text" maxlength="1"></td>
+							<td class="case" id="22"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>
+				</td>
+				<td id="B">
+					<table>
+						<tr>
+							<td class="case" id="30"><input type="text" maxlength="1"></td>
+							<td class="case" id="40"><input type="text" maxlength="1"></td>
+							<td class="case" id="50"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="31"><input type="text" maxlength="1"></td>
+							<td class="case" id="41"><input type="text" maxlength="1"></td>
+							<td class="case" id="51"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="32"><input type="text" maxlength="1"></td>
+							<td class="case" id="42"><input type="text" maxlength="1"></td>
+							<td class="case" id="52"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+				<td id="C">
+					<table>
+						<tr>
+							<td class="case" id="60"><input type="text" maxlength="1"></td>
+							<td class="case" id="70"><input type="text" maxlength="1"></td>
+							<td class="case" id="80"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="61"><input type="text" maxlength="1"></td>
+							<td class="case" id="71"><input type="text" maxlength="1"></td>
+							<td class="case" id="81"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="62"><input type="text" maxlength="1"></td>
+							<td class="case" id="72"><input type="text" maxlength="1"></td>
+							<td class="case" id="82"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+			</tr>		
+			<tr>
+				<td id="D">
+					<table>
+						<tr>
+							<td class="case" id="03"><input type="text" maxlength="1"></td>
+							<td class="case" id="13"><input type="text" maxlength="1"></td>
+							<td class="case" id="23"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="04"><input type="text" maxlength="1"></td>
+							<td class="case" id="14"><input type="text" maxlength="1"></td>
+							<td class="case" id="24"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="05"><input type="text" maxlength="1"></td>
+							<td class="case" id="15"><input type="text" maxlength="1"></td>
+							<td class="case" id="25"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+				<td id="E">
+					<table>
+						<tr>
+							<td class="case" id="33"><input type="text" maxlength="1"></td>
+							<td class="case" id="43"><input type="text" maxlength="1"></td>
+							<td class="case" id="53"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="34"><input type="text" maxlength="1"></td>
+							<td class="case" id="44	"><input type="text" maxlength="1"></td>
+							<td class="case" id="54"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="35"><input type="text" maxlength="1"></td>
+							<td class="case" id="45"><input type="text" maxlength="1"></td>
+							<td class="case" id="55"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+				<td id="F">
+					<table>
+						<tr>
+							<td class="case" id="63"><input type="text" maxlength="1"></td>
+							<td class="case" id="73"><input type="text" maxlength="1"></td>
+							<td class="case" id="83"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="64"><input type="text" maxlength="1"></td>
+							<td class="case" id="74"><input type="text" maxlength="1"></td>
+							<td class="case" id="84"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="65"><input type="text" maxlength="1"></td>
+							<td class="case" id="75"><input type="text" maxlength="1"></td>
+							<td class="case" id="85"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+			</tr>		
+			<tr>
+				<td id="G">
+					<table>
+						<tr>
+							<td class="case" id="06"><input type="text" maxlength="1"></td>
+							<td class="case" id="16"><input type="text" maxlength="1"></td>
+							<td class="case" id="26"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="07"><input type="text" maxlength="1"></td>
+							<td class="case" id="17"><input type="text" maxlength="1"></td>
+							<td class="case" id="27"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="08"><input type="text" maxlength="1"></td>
+							<td class="case" id="18"><input type="text" maxlength="1"></td>
+							<td class="case" id="28"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+				<td id="H">
+					<table>
+						<tr>
+							<td class="case" id="36"><input type="text" maxlength="1"></td>
+							<td class="case" id="46"><input type="text" maxlength="1"></td>
+							<td class="case" id="56"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="37"><input type="text" maxlength="1"></td>
+							<td class="case" id="47"><input type="text" maxlength="1"></td>
+							<td class="case" id="57"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="38"><input type="text" maxlength="1"></td>
+							<td class="case" id="48"><input type="text" maxlength="1"></td>
+							<td class="case" id="58"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+				<td id="I">
+					<table>
+						<tr>
+							<td class="case" id="66"><input type="text" maxlength="1"></td>
+							<td class="case" id="76"><input type="text" maxlength="1"></td>
+							<td class="case" id="86"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="67"><input type="text" maxlength="1"></td>
+							<td class="case" id="77"><input type="text" maxlength="1"></td>
+							<td class="case" id="87"><input type="text" maxlength="1"></td>
+						</tr>		
+						<tr>
+							<td class="case" id="68"><input type="text" maxlength="1"></td>
+							<td class="case" id="78"><input type="text" maxlength="1"></td>
+							<td class="case" id="88"><input type="text" maxlength="1"></td>
+						</tr>
+					</table>					
+				</td>
+			</tr>
+		</table>
+		<button id="sendValue">Envoyer les valeurs</button>
+		<button id="remplirTest">Tester remplissage</button>
+		
+
+	
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
