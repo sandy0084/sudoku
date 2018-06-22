@@ -79,6 +79,12 @@ img {
 	margin:auto;
 }
 
+#clear {
+	display:block;
+	width:200px;
+	margin:auto;
+}
+
 /* LG */
 @media (min-width: 1200px) {
 
