@@ -6,12 +6,16 @@
 
 # methode Poste
 class DataService:
+    cors = public_cors
 
     def on_get(self, req, resp):
         data = req.stream.read().decode('utf-8')
         # output the data, we could write it to persistent storage here
         resp.media = resolutionSudo
         print('Resolution du Sudoku' + resolutionSudo)
+
+    def on_post(self, req, resp):
+        resp.body = "Everone can post to this resource"
 
 
 
