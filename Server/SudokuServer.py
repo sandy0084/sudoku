@@ -32,7 +32,7 @@ class DataService:
         # formate les données en format JSON
         s.deserialisation(data)
         s.solve()
-        resp.media = s.serialisation()
+        resp.media = s.serialisation().replace('\'','\"')
 
 
 resolutionSudo = 'test'
