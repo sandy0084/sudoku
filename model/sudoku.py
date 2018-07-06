@@ -1,6 +1,6 @@
 import json
-#from sudoku.model.case import Case
-from model.case import Case
+
+from algorithm.sudokusolver import SudokuSolver
 
 #classe sudoku
 class Sudoku:
@@ -10,17 +10,16 @@ class Sudoku:
         #attribut
         #self.grille = [[0 for x in range(9)] for y in range(9)]
         self.jsonstr = ""
-        grille = []
-        for l in range(0, 8):
+        self.grille = []
+        for l in range(0, 9):
             ligne = []
             #print(l)
             for c in range(0, 9):
-                ligne.append(Case(0))
+                ligne.append(0)
                 #print(c)
-            grille.append(l)
+            self.grille.append(ligne)
 
         #print("Creation d'un sudoku ")
-        #print(grille)
 
         #creation des a, b, c, d, e, f, g, h, i (liste avec les cases correspondantes (schema))
 
@@ -44,13 +43,19 @@ class Sudoku:
 
         self.jsonstr = json.loads(sudoku)
 
-        return
+        for i in range(0, 9):
+            for j in range(0, 9):
+                indice = str(i) + str(j)
+                # print(self.jsonstr[indice])
+                if (self.jsonstr["sudoku"][indice] != ''):
+                    self.grille[i][j] = int(self.jsonstr["sudoku"][indice])
 
 
     # solve (test de la grille)
     def solve(self):
-        #test du sudoku
-        return
+        solver = SudokuSolver(self.grille)
+        solver.solve()
+        self.grille = solver.grid
 
     # serialisation (renvoi de la grille)
     def serialisation(self):
@@ -60,12 +65,14 @@ class Sudoku:
                 indice = str(i) + str(j)
                 #print(self.jsonstr[indice])
                 if(self.jsonstr["sudoku"][indice] == ''):
-                    self.jsonstr["sudoku"][indice] = '-1'
+                    self.jsonstr["sudoku"][indice] = str(self.grille[i][j])
+
         return str(self.jsonstr)
 
-grille = Sudoku()
-sudoku = '{"sudoku":{"10":"1","11":"","12":"8","13":"","14":"","15":"6","16":"","17":"","18":"","20":"","21":"4","22":"","23":"","24":"8","25":"","26":"","27":"","28":"","30":"","31":"1","32":"","33":"","34":"","35":"4","36":"3","37":"","38":"","40":"","41":"","42":"","43":"","44":"","45":"7","46":"","47":"1","48":"2","50":"","51":"2","52":"","53":"3","54":"","55":"8","56":"9","57":"","58":"","60":"8","61":"","62":"4","63":"","64":"6","65":"5","66":"","67":"","68":"1","70":"9","71":"","72":"","73":"","74":"7","75":"","76":"","77":"4","78":"3","80":"","81":"","82":"","83":"","84":"4","85":"","86":"5","87":"6","88":"","00":"3","01":"","02":"","03":"","04":"5","05":"","06":"","07":"2","08":""}}'
-grille.deserialisation(sudoku)
-res = grille.serialisation()
-
-print(res)
+# grille = Sudoku()
+# sudoku = '{"sudoku":{"10":"1","11":"","12":"8","13":"","14":"","15":"6","16":"","17":"","18":"","20":"","21":"4","22":"","23":"","24":"8","25":"","26":"","27":"","28":"","30":"","31":"1","32":"","33":"","34":"","35":"4","36":"3","37":"","38":"","40":"","41":"","42":"","43":"","44":"","45":"7","46":"","47":"1","48":"2","50":"","51":"2","52":"","53":"3","54":"","55":"8","56":"9","57":"","58":"","60":"8","61":"","62":"4","63":"","64":"6","65":"5","66":"","67":"","68":"1","70":"9","71":"","72":"","73":"","74":"7","75":"","76":"","77":"4","78":"3","80":"","81":"","82":"","83":"","84":"4","85":"","86":"5","87":"6","88":"","00":"3","01":"","02":"","03":"","04":"5","05":"","06":"","07":"2","08":""}}'
+# newGrille = grille.deserialisation(sudoku)
+# grille.solve()
+# res = grille.serialisation()
+#
+# print(res)

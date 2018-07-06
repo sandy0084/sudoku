@@ -69,20 +69,38 @@ img {
 
 #sendValue {
 	display:block;
-	width:200px;
-	margin:auto;
+	width:621px;
+	margin:0 auto 10px auto;
+	background:#fed136;
+	color:#fff;
+	padding:5px 20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	border:none;
 }
 
 #remplirTest {
 	display:block;
-	width:200px;
-	margin:auto;
+	width:621px;
+	margin:0 auto 10px auto;
+	background:#fed136;
+	color:#fff;
+	padding:5px 20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	border:none;
 }
 
 #clear {
 	display:block;
-	width:200px;
-	margin:auto;
+	width:621px;
+	margin:0 auto 10px auto;
+	background:#fed136;
+	color:#fff;
+	padding:5px 20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	border:none;
 }
 
 /* LG */
