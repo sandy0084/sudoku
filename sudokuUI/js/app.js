@@ -20,7 +20,8 @@ $(function() {
 		  type : "POST",
 		  data : { json : json},
 		  success : function(response){
-			  console.log(response);
+		       console.log(response);
+			  remplirSudoku(response);
 		  }
 		});
 		
