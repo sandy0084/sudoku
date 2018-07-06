@@ -1,5 +1,5 @@
 import json
-from model.case import Case
+from sudoku.model.case import Case
 
 #classe sudoku
 class Sudoku:

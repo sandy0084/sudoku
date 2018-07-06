@@ -3,7 +3,7 @@ import os
 from wsgiref import simple_server
 from falcon_cors import CORS
 import urllib.parse
-from model.sudoku import Sudoku
+from sudoku.model.sudoku import Sudoku
 
 # from Server.Routes import DataService
 
@@ -32,7 +32,7 @@ class DataService:
         # formate les données en format JSON
         s.deserialisation(data)
         s.solve()
-        resp.media = s.serialisation()
+        resp.media = s.serialisation().replace('\'','\"')
 
 
 resolutionSudo = 'test'
