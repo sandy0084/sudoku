@@ -59,7 +59,7 @@ class Sudoku:
                 indice = str(i) + str(j)
                 #print(self.jsonstr[indice])
                 if(self.jsonstr["sudoku"][indice] == ''):
-                    self.jsonstr["sudoku"][indice] = -1
+                    self.jsonstr["sudoku"][indice] = '-1'
         return str(self.jsonstr)
 
 grille = Sudoku()
