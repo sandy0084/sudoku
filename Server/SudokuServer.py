@@ -9,7 +9,7 @@ app = falcon.API()
 # Recupere le chemin du dossier courant
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# Ajoute dans l'application
+# Ajoute dans l'applicationw
 ressource = os.path.dirname(dir_path) + '/sudokuUI/'
 app.add_static_route('/application', ressource)
 
