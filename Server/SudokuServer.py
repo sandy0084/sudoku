@@ -3,7 +3,8 @@ import os
 from wsgiref import simple_server
 from falcon_cors import CORS
 import urllib.parse
-from sudoku.model.sudoku import Sudoku
+#from sudoku.model.sudoku import Sudoku
+from model.sudoku import Sudoku
 
 # from Server.Routes import DataService
 
