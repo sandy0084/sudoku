@@ -22,9 +22,10 @@ class DataService:
         print('Resolution du Sudoku' + resolutionSudo)
 
     def on_post(self, req, resp):
-        data = req.stream.read().decode('utf-8')
+        data = req.bounded_stream.read().decode('utf-8')
+        data = data.replace('json=','')
         # urllib.parse.unquote(data)
-        resp.media = "Everone can post to this resource" + urllib.parse.unquote(data)
+        resp.media = urllib.parse.unquote(data)
         print(urllib.parse.unquote(data))
 
 resolutionSudo = 'test'
