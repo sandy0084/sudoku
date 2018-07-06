@@ -2,6 +2,8 @@ import falcon
 import os
 from wsgiref import simple_server
 from falcon_cors import CORS
+import urllib.parse
+from model.sudoku import Sudoku
 
 # from Server.Routes import DataService
 
@@ -12,8 +14,10 @@ app = falcon.API(middleware=[cors.middleware])
 public_cors = CORS(allow_all_origins=True)
 
 class DataService:
+
     cors = public_cors
 
+    #TEST pour la page Demo vérifier qu'elle receptionne bien des informations
     def on_get(self, req, resp):
         data = req.stream.read().decode('utf-8')
         # output the data, we could write it to persistent storage here
@@ -21,8 +25,15 @@ class DataService:
         print('Resolution du Sudoku' + resolutionSudo)
 
     def on_post(self, req, resp):
-        data = req.stream.read().decode('utf-8')
-        resp.media = "Everone can post to this resource" + data
+        data = urllib.parse.unquote(req.bounded_stream.read().decode('utf-8'))
+        data = data.replace('json=','')
+
+        s = Sudoku()
+        # formate les données en format JSON
+        s.deserialisation(data)
+        s.solve()
+        resp.media = s.serialisation()
+
 
 resolutionSudo = 'test'
 
