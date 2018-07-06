@@ -31,7 +31,7 @@ class DataService:
         s = Sudoku()
         # formate les données en format JSON
         s.deserialisation(data)
-
+        s.solve()
         resp.media = s.serialisation()
 
 

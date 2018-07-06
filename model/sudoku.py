@@ -47,7 +47,7 @@ class Sudoku:
 
 
     # solve (test de la grille)
-    def solve(self, sudoku):
+    def solve(self):
         #test du sudoku
         return
 
