@@ -2,6 +2,7 @@ import falcon
 import os
 from wsgiref import simple_server
 from falcon_cors import CORS
+import urllib.parse
 
 # from Server.Routes import DataService
 
@@ -22,7 +23,9 @@ class DataService:
 
     def on_post(self, req, resp):
         data = req.stream.read().decode('utf-8')
-        resp.media = "Everone can post to this resource" + data
+        # urllib.parse.unquote(data)
+        resp.media = "Everone can post to this resource" + urllib.parse.unquote(data)
+        print(urllib.parse.unquote(data))
 
 resolutionSudo = 'test'
 
